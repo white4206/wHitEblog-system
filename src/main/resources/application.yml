@@ -1,0 +1,108 @@
+wHitEblog:
+  # 文件上传路径
+  uploadPath: D:/wHitEblog/uploadPath
+  # uploadPath: /wHitEblog/uploadPath
+server:
+  # 后端服务端口号
+  port: 10010
+spring:
+  application:
+    # 配置应用名称 可选配置
+    name: wHitEblog-system
+  # ============== mysql数据库配置 ==============
+  datasource:
+    # 数据库连接地址
+    # url: jdbc:mysql://localhost:3306/white_blog?characterEncoding=UTF-8
+    url: jdbc:mysql://47.120.12.136:3306/white_blog?characterEncoding=UTF-8
+    # 数据库用户名
+    username: root
+    # 数据库密码
+    password: 420613445Di_
+    # 数据库驱动名称
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 线程池配置
+    hikari:
+      # 最小线程池数量
+      minimum-idle: 10
+      # 最大存活时间 0则永不过期
+      max-lifetime: 180000
+      # 最小线程池数量
+      maximum-pool-size: 10
+      # 连接超时时间
+      connection-timeout: 10000
+  # ============== jackson配置 ==============
+  jackson:
+    # 开启json不返回null值
+    default-property-inclusion: non_null
+  data:
+    # ============== redis数据库配置 ==============
+    redis:
+      # redis数据库索引
+      database: 0
+      # 数据库主机号
+      host: 47.120.12.136
+      # 数据库端口
+      port: 6379
+      # 数据库密码
+      password: 420613445Di_
+      # 切换redis 默认使用的lettuce客户端为jedis客户端
+      client-type: jedis
+      jedis:
+        pool:
+          # 最大连接数
+          max-active: 32
+          # 最大阻塞等待时间(使用负值表示没有限制)
+          max-wait: -1
+          # 最大空闲连接数
+          max-idle: 16
+          # 最小空闲连接数
+          min-idle: 8
+      # 连接超时时间
+      timeout: 10000
+  # ============== servlet配置 ==============
+  servlet:
+    multipart:
+      # 启用http上传
+      enabled: true
+      # 单个文件长传大小限制
+      max-file-size: 10MB
+      # 最大请求大小
+      max-request-size: 20MB
+      # 上传文件缓存阈值
+      file-size-threshold: 512KB
+      # 设置上传的临时目录
+      location: /wHitEblog/temp
+  # ============== 邮箱发送配置 ==============
+  # qq邮件服务器地址
+  mail:
+    host: smtp.qq.com
+    # 自己的邮箱名
+    username: 1834893128@qq.com
+    # 授权码
+    password: niitoixgzvgtbhae
+    # smtp服务端口号
+    port: 465
+    properties:
+      mail:
+        smtp:
+          socketFactory:
+            # 配置对smtp服务支持的java类
+            class: javax.net.ssl.SSLSocketFactory
+    default-encoding: UTF-8
+# ============== MyBatis配置 ==============
+mybatis-plus:
+  configuration:
+    # 开启mybatis的驼峰命名自动映射开关
+    map-underscore-to-camel-case: true
+    # 配置mybatis的日志, 并指定输出到控制台
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      # MybatisPlus 主键策略
+      id-type: ASSIGN_ID
+# ============== swagger配置 ==============
+springdoc:
+  swagger-ui:
+    path: # 接口文档ui地址
+  api-docs:
+    path: /prod-api/v3/api-docs # 接口文档json地址
