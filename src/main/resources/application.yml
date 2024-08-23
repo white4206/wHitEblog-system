@@ -1,7 +1,7 @@
 wHitEblog:
   # 文件上传路径
-  uploadPath: D:/wHitEblog/uploadPath
-  # uploadPath: /wHitEblog/uploadPath
+  # uploadPath: D:/wHitEblog/uploadPath
+  uploadPath: /wHitEblog/uploadPath
 server:
   # 后端服务端口号
   port: 10010
@@ -105,4 +105,4 @@ springdoc:
   swagger-ui:
     path: # 接口文档ui地址
   api-docs:
-    path: /prod-api/v3/api-docs # 接口文档json地址
+    path: /v3/api-docs # 接口文档json地址

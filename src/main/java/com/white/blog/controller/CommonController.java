@@ -1,13 +1,11 @@
 package com.white.blog.controller;
 
-import com.white.blog.entity.BlogArticle;
-import com.white.blog.entity.Carousel;
-import com.white.blog.entity.DailyRecommendation;
-import com.white.blog.entity.RelatedLink;
+import com.white.blog.entity.*;
 import com.white.blog.entity.vo.*;
 import com.white.blog.service.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +46,9 @@ public class CommonController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private IpAddressService ipAddressService;
 
     /**
      * @param message
@@ -187,6 +188,20 @@ public class CommonController {
     @GetMapping("/getPlatformAnnouncement")
     public R<List<PlatformAnnouncementVo>> getPlatformAnnouncement() {
         return blogArticleService.getPlatformAnnouncement();
+    }
+
+    /**
+     * @param request
+     * @return R<IpAddress>
+     * @name: getIPAddress
+     * @author: white_
+     * @description: 获取访问者IP地址及IP归属地接口
+     * @date: 2024/8/21 00:21:44
+     */
+    @Operation(summary = "获取访问者IP地址及IP归属地接口")
+    @PostMapping("/getIPAddress")
+    public R<IpAddress> getIPAddress(HttpServletRequest request) {
+        return ipAddressService.getIpAddress(request);
     }
 }
 

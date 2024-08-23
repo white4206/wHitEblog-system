@@ -62,7 +62,7 @@ public class ShiroConfig {
         filterRuleMap.put("/swagger-ui/**", "anon");
         filterRuleMap.put("/swagger-ui.html", "anon");
         filterRuleMap.put("/swagger-resources/**", "anon");
-        filterRuleMap.put("/prod-api/v3/api-docs/**", "anon");
+        filterRuleMap.put("/v3/api-docs/**", "anon");
         filterRuleMap.put("/webjars/**", "anon");
         // 访问 unauthorized 时直接放行
         filterRuleMap.put("/unauthorized/**", "anon");
@@ -74,6 +74,7 @@ public class ShiroConfig {
         filterRuleMap.put("/getCarousel", "anon");
         filterRuleMap.put("/getRelatedLink", "anon");
         filterRuleMap.put("/getHomePageNotice", "anon");
+        filterRuleMap.put("/getIPAddress", "anon");
         filterRuleMap.put("/user/getUserData", "anon");
         filterRuleMap.put("/blog/getUserArticle", "anon");
         filterRuleMap.put("/blog/searchArticle", "anon");

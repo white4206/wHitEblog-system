@@ -4,6 +4,7 @@ import com.white.blog.common.R;
 import com.white.blog.entity.BlogArticle;
 import com.white.blog.entity.BlogArticleTag;
 import com.white.blog.entity.vo.*;
+import com.white.blog.service.BlogArticleCommentService;
 import com.white.blog.service.BlogArticleService;
 import com.white.blog.service.BlogArticleTagService;
 import com.white.blog.service.UserService;
@@ -37,6 +38,8 @@ public class BlogController {
     @Autowired
     private BlogArticleTagService blogArticleTagService;
 
+    @Autowired
+    private BlogArticleCommentService blogArticleCommentService;
 
     /**
      * @param categoryId
@@ -186,5 +189,11 @@ public class BlogController {
     public R<List<ContentArticleVo>> getContentArticle(String status, Integer year, Integer month, Long category, String keyword,
                                                        @RequestParam Integer pageNum, @RequestParam Integer pageCount) {
         return blogArticleService.getContentArticle(status, year, month, category, keyword, pageNum, pageCount);
+    }
+
+    @Operation(summary = "获取文章评论内容")
+    @GetMapping("/getArticleComment")
+    public R<List<BlogArticleCommentVo>> getArticleComment(Long articleId) {
+        return blogArticleCommentService.getBlogArticleComment(articleId);
     }
 }
