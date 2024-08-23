@@ -17,7 +17,7 @@ public class SwaggerConfig {
     @Bean
     public OpenAPI customOpenAPI() {
         return new OpenAPI().info(new Info()
-                .title("wHitE | 博客 Blog")
+                .title("Blog | wHitE 博客")
                 .version("1.0.0")
                 .description("wHitE博客接口文档"));
     }
