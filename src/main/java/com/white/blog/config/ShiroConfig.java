@@ -58,6 +58,7 @@ public class ShiroConfig {
         filterRuleMap.put("/user/login", "anon");
         // 访问静态资源放行
         filterRuleMap.put("/resource/**", "anon");
+        filterRuleMap.put("/errorAssets/**", "anon");
         // 访问 Swagger3 资源时放行
         filterRuleMap.put("/swagger-ui/**", "anon");
         filterRuleMap.put("/swagger-ui.html", "anon");

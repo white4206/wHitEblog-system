@@ -13,7 +13,7 @@ spring:
   datasource:
     # 数据库连接地址
     # url: jdbc:mysql://localhost:3306/white_blog?characterEncoding=UTF-8
-    url: jdbc:mysql://47.120.12.136:3306/white_blog?characterEncoding=UTF-8
+    url: jdbc:mysql://IP地址:3306/white_blog?characterEncoding=UTF-8
     # 数据库用户名
     username: 用户名
     # 数据库密码
