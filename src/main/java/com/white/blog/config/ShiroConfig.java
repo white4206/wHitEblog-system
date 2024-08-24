@@ -82,6 +82,7 @@ public class ShiroConfig {
         filterRuleMap.put("/blog/getArticleTag", "anon");
         filterRuleMap.put("/blog/getArticle", "anon");
         filterRuleMap.put("/blog/getArticleDetail", "anon");
+        filterRuleMap.put("/blog/getArticleComment", "anon");
         filterRuleMap.put("/leaveMessage/getLeaveMessage", "anon");
         // 访问需要登录接口拦截验证
         // 其他接口通过 login Filter

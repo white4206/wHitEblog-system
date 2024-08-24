@@ -1,7 +1,7 @@
 wHitEblog:
   # 文件上传路径
   # uploadPath: D:/wHitEblog/uploadPath
-  uploadPath: /wHitEblog/uploadPath
+  uploadPath: D:/wHitEblog/uploadPath
 server:
   # 后端服务端口号
   port: 10010
@@ -13,11 +13,11 @@ spring:
   datasource:
     # 数据库连接地址
     # url: jdbc:mysql://localhost:3306/white_blog?characterEncoding=UTF-8
-    url: jdbc:mysql://IP地址:3306/white_blog?characterEncoding=UTF-8
+    url: jdbc:mysql://blog.whitecc.top:3306/white_blog?characterEncoding=UTF-8
     # 数据库用户名
-    username: 用户名
+    username: root
     # 数据库密码
-    password: 密码
+    password: 420613445Di_
     # 数据库驱动名称
     driver-class-name: com.mysql.cj.jdbc.Driver
     # 线程池配置
@@ -40,11 +40,11 @@ spring:
       # redis数据库索引
       database: 0
       # 数据库主机号
-      host: IP地址
+      host: blog.whitecc.top
       # 数据库端口
       port: 6379
       # 数据库密码
-      password: 密码
+      password: 420613445Di_
       # 切换redis 默认使用的lettuce客户端为jedis客户端
       client-type: jedis
       jedis:
@@ -77,9 +77,9 @@ spring:
   mail:
     host: smtp.qq.com
     # 自己的邮箱名
-    username: 邮箱
+    username: 1834893128@qq.com
     # 授权码
-    password: 密码
+    password: niitoixgzvgtbhae
     # smtp服务端口号
     port: 465
     properties:

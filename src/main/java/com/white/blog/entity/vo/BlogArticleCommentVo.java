@@ -1,8 +1,13 @@
 package com.white.blog.entity.vo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.white.blog.entity.BlogArticleComment;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * @author white_
@@ -11,6 +16,9 @@ import java.time.LocalDateTime;
  * @description 博客文章评论视图层实体类
  * @date 2024/8/18 22:56:03
  */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class BlogArticleCommentVo {
     /**
      * 评论id
@@ -33,17 +41,21 @@ public class BlogArticleCommentVo {
      */
     private Long userId;
     /**
-     * 作者
+     * 作者昵称
      */
-    private String author;
+    private String nickname;
+    /**
+     * 作者头像
+     */
+    private String avatar;
     /**
      * 回复id
      */
     private Long replyId;
     /**
-     * 回复用户
+     * 回复昵称
      */
-    private String replyUser;
+    private String replyNickname;
     /**
      * 点赞数
      */
@@ -58,4 +70,20 @@ public class BlogArticleCommentVo {
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private LocalDateTime updateTime;
+    /**
+     * 回复子评论
+     */
+    private List<BlogArticleCommentVo> subComments;
+
+    public BlogArticleCommentVo(BlogArticleComment blogArticleComment) {
+        this.id = blogArticleComment.getId();
+        this.parentId = blogArticleComment.getParentId();
+        this.articleId = blogArticleComment.getArticleId();
+        this.content = blogArticleComment.getContent();
+        this.userId = blogArticleComment.getUserId();
+        this.replyId = blogArticleComment.getReplyId();
+        this.likeNum = blogArticleComment.getLikeNum();
+        this.createTime = blogArticleComment.getCreateTime();
+        this.updateTime = blogArticleComment.getUpdateTime();
+    }
 }

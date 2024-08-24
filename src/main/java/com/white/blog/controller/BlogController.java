@@ -193,7 +193,8 @@ public class BlogController {
 
     @Operation(summary = "获取文章评论内容")
     @GetMapping("/getArticleComment")
-    public R<List<BlogArticleCommentVo>> getArticleComment(Long articleId) {
-        return blogArticleCommentService.getBlogArticleComment(articleId);
+    public R<List<BlogArticleCommentVo>> getArticleComment(@RequestParam Integer pageNum, @RequestParam Integer pageCount,
+                                                           @RequestParam Long articleId) {
+        return blogArticleCommentService.getBlogArticleComment(pageNum, pageCount, articleId);
     }
 }

@@ -15,5 +15,5 @@ import java.util.List;
  * @date 2024/8/19 00:48:53
  */
 public interface BlogArticleCommentService extends IService<BlogArticleComment> {
-    R<List<BlogArticleCommentVo>> getBlogArticleComment(Long articleId);
+    R<List<BlogArticleCommentVo>> getBlogArticleComment(Integer pageNum, Integer pageCount, Long articleId);
 }
