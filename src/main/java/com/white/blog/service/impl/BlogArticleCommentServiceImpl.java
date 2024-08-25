@@ -72,7 +72,7 @@ public class BlogArticleCommentServiceImpl extends ServiceImpl<BlogArticleCommen
             blogArticleCommentVo.setSubComments(subBlogArticleCommentVoList);
             blogArticleCommentVoList.add(blogArticleCommentVo);
 
-            // 记录子评论数量
+            // 记录子评论数量并累加
             subCount += this.count(subQw);
         }
 
